@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap');
+
+.card {
+  width: 350px;
+  height: 450px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 150px 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 1s;
+  position: relative;
+  background-image: url(https://i.pinimg.com/236x/3b/1c/dc/3b1cdc25ae9b69d82bd7fae1f506ad3b--a-bowl-skin-tips.jpg);
+  background-position: bottom -20px right -70px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card__title {
+  font-family: 'Jost', sans-serif;
+  font-size: 42px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+  transform: translateY(230px);
+  transition-duration: 1s;
+  z-index: 1;
+}
+
+.card__text {
+  font-family: 'Jost', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #000000;
+  width: 65%;
+  margin-top: 25px;
+  transform: translateY(230px);
+  transition-duration: 1s;
+  opacity: 1;
+  z-index: 1;
+}
+
+.card__plus {
+  transition-duration: 1s;
+  z-index: 1;
+  transform: translateY(230px);
+  opacity: 1;
+  font-family: 'Jost', sans-serif;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #000000;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.card__plus::before {
+  opacity: 0.8;
+  content: '';
+  background-image: url(https://cdn-icons-png.flaticon.com/512/1828/1828817.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right: 20px;
+  width: 30px;
+  height: 30px;
+}
+
+.card::after {
+  content: '';
+  background-color: rgba(255, 255, 255, 0.55);
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 2rem;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  z-index: 0;
+  transition: 1s;
+}
+
+.card:hover {
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.6) inset;
+  cursor: pointer;
+}
+
+.card:hover::after {
+  opacity: 0;
+  transition: 1s;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+}
+
+.card:hover .card__title,
+.card:hover .card__text,
+.card:hover .card__plus {
+  transform: translateY(0);
+  opacity: 1;
+  transition-duration: 1s;
+}
